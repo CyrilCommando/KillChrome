@@ -1,0 +1,32 @@
+{
+  "name": "KillChrome",
+  "description": "--------",
+  "version": "1",
+  "author": "CyrilCommando",
+  "web_accessible_resources": [{
+    "resources": [],
+    "matches": []
+  }],
+  "manifest_version": 3,
+  "permissions": ["storage", "downloads", "tabs", "activeTab", "background", "contextMenus", "unlimitedStorage"],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'self'"},
+  "icons": {
+    "16": "icon.png",
+    "48": "squared48.png",
+    "128": "squared.png" 
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "------",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ 
+    {
+      "matches": ["https://chan.sankakucomplex.com/post/*", "https://chan.sankakucomplex.com/*", "https://chan.sankakucomplex.com/", "https://s.sankakucomplex.com/data/*"],
+      "js": ["jquery-3.4.1.min.js"],
+      "css": []
+    } ],
+  "background": {
+    "service_worker": "background.js" 
+  }
+}
